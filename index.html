@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html query="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./layui.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-container">
+      <form class="layui-form">
+        <div class="layui-form-item">
+          <div class="layui-form-item-main">
+            <label class="layui-form-label">func-type</label>
+            <div class="layui-input-block">
+              <select name="type" id="type" lay-verify="required" lay-filter="type">
+                <option value="">请选择</option>
+                <option value="set">set</option>
+                <option value="query">query</option>
+                <option value="set&query">set & query</option>
+              </select>
+            </div>
+          </div>
+          <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-item-main">
+            <label class="layui-form-label">set-param</label>
+            <div class="layui-input-block">
+              <input id="setInput" type="text" class="layui-input select-input" autocomplete="off" required>
+              <select name="setSelect" id="setSelect" lay-verify="required" lay-filter="set">
+                <option value="set1">set-1</option>
+                <option value="set2">set-2</option>
+                <option value="null">null</option>
+              </select>
+            </div>
+          </div>
+          <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-item-main">
+            <label class="layui-form-label">query-param</label>
+            <div class="layui-input-block">
+              <input id="queryInput" type="text" class="layui-input select-input" autocomplete="off" required>
+              <select name="querySelect" id="querySelect" lay-verify="required" lay-filter="query">
+                <option value="query1">query-1</option>
+                <option value="query2">query-2</option>
+                <option value="null">null</option>
+              </select>
+            </div>
+          </div>
+          <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-item-main">
+            <label class="layui-form-label">xxx-param</label>
+            <div class="layui-input-block">
+              <select name="xxxSelect" id="xxxSelect" lay-verify="required" lay-filter="xxx">
+                <option value="xxx_MTA">xxx_MTA</option>
+                <option value="xxx_MAT">xxx_MAT</option>
+                <option value="xxx_BAT">xxx_BAT</option>
+                <option value="null">null</option>
+              </select>
+            </div>
+          </div>
+          <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="layui-form-item" style="display: flex;align-items:center;">
+          <div class="layui-form-item-main" style="width: 500px;">
+            <label class="layui-form-label">concat-set</label>
+            <div class="layui-input-block">
+              <input id="concatsetInput" type="text" class="layui-input select-input" autocomplete="off" required>
+            </div>
+          </div>
+          <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div class="layui-form-item" style="display: flex;align-items:center;">
+          <div class="layui-form-item-main" style="width: 500px;">
+            <label class="layui-form-label">concat-query</label>
+            <div class="layui-input-block">
+              <input id="concatqueryInput" type="text" class="layui-input select-input" autocomplete="off" required>
+            </div>
+          </div>
+          <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div style="text-align: center;">
+          <button class="layui-btn devicebtn" id="saveJson">生成json文件</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./jquery.js"></script>
+  <script src="./layui-v2.6.8/layui/layui.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
