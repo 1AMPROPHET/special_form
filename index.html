@@ -31,7 +31,7 @@
           <div class="layui-form-item-main">
             <label class="layui-form-label">set-param</label>
             <div class="layui-input-block">
-              <input id="setInput" type="text" class="layui-input select-input" autocomplete="off" required>
+              <input id="setInput" name="setInput" type="text" class="layui-input select-input" autocomplete="off" required>
               <select name="setSelect" id="setSelect" lay-verify="required" lay-filter="set">
                 <option value="set1">set-1</option>
                 <option value="set2">set-2</option>
@@ -45,7 +45,7 @@
           <div class="layui-form-item-main">
             <label class="layui-form-label">query-param</label>
             <div class="layui-input-block">
-              <input id="queryInput" type="text" class="layui-input select-input" autocomplete="off" required>
+              <input id="queryInput" name="queryInput" type="text" class="layui-input select-input" autocomplete="off" required>
               <select name="querySelect" id="querySelect" lay-verify="required" lay-filter="query">
                 <option value="query1">query-1</option>
                 <option value="query2">query-2</option>
@@ -59,6 +59,7 @@
           <div class="layui-form-item-main">
             <label class="layui-form-label">xxx-param</label>
             <div class="layui-input-block">
+              <input type="text" id="xxxInput" name="xxxInput" class="layui-input select-input" autocomplete="off" required>
               <select name="xxxSelect" id="xxxSelect" lay-verify="required" lay-filter="xxx">
                 <option value="xxx_MTA">xxx_MTA</option>
                 <option value="xxx_MAT">xxx_MAT</option>
@@ -73,7 +74,7 @@
           <div class="layui-form-item-main" style="width: 500px;">
             <label class="layui-form-label">concat-set</label>
             <div class="layui-input-block">
-              <input id="concatsetInput" type="text" class="layui-input select-input" autocomplete="off" required>
+              <input id="concatsetInput" name="concatsetInput" type="text" class="layui-input select-input" autocomplete="off" required>
             </div>
           </div>
           <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
@@ -82,13 +83,13 @@
           <div class="layui-form-item-main" style="width: 500px;">
             <label class="layui-form-label">concat-query</label>
             <div class="layui-input-block">
-              <input id="concatqueryInput" type="text" class="layui-input select-input" autocomplete="off" required>
+              <input id="concatqueryInput" name="concatqueryInput" type="text" class="layui-input select-input" autocomplete="off" required>
             </div>
           </div>
           <p class="discription">说明： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </div>
         <div style="text-align: center;">
-          <button class="layui-btn devicebtn" id="saveJson">生成json文件</button>
+          <button class="layui-btn devicebtn" id="saveJson" lay-filter="submit" lay-submit>生成json文件</button>
         </div>
       </form>
     </div>

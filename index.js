@@ -1,6 +1,5 @@
 layui.use(['layer', 'form'], function () {
-  var layer = layui.layer,
-  form = layui.form,
+  var form = layui.form,
   $ = layui.jquery
   form.render()
 
@@ -23,16 +22,11 @@ layui.use(['layer', 'form'], function () {
   bindMultiInput(inputOrSelectList)
   // 初始化拼接
   // concatValue(concatList)
+  inputListener(inputOrSelectList)
 
-  $('#saveJson').on('click', function () {
-
-    if (!$('#type').val()) {
-      layer.msg('请选择type')
-      return false
-    }
-
+  form.on('submit(submit)', function () {
     valiMultiInputOrSelect(validateList) && saveJSON(setting, 'setting.json')
-
+    return false
   })
 
   // type选择
@@ -90,12 +84,10 @@ layui.use(['layer', 'form'], function () {
     return params.every(param => {
       var paramInput = $(`#${param}Input`)
       if (paramInput.length) {
-        if (paramInput.val().trim() === '') {
-          return false
-        } else {
-          setting[param] = paramInput.val() === 'null' ? null : paramInput.val().trim()
-          return true
-        }
+
+        setting[param] = paramInput.val() === 'null' ? null : paramInput.val().trim()
+        return true
+
       } else {
         setting[param] = $(`#${param}Select`).val()
         return true
@@ -169,4 +161,38 @@ layui.use(['layer', 'form'], function () {
       }
     })
   }
+
+  // 监听输入选择框的输入绑定
+  function inputListener(params) {
+    const inputDebounce = debounce(
+      () => concatValue(concatList),
+      200
+    )
+    params.forEach(param => {
+      $(`#${param}Input`).on('input', function (e) {
+        // inputDebounce(e.target.value)
+        inputDebounce()
+      })
+    })
+  }
+
+  // 防抖
+  function debounce(func, time=200) {
+    let timer = null
+    return function (...args) {
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => {
+        func.apply(this, args)
+      }, time)
+    }
+  }
+
+  // 拼接最后一个下划线后的字符串
+  // function lastUnderline(str) {
+  //   const index = str.lastIndexOf('_') === -1 ? 0 : str.lastIndexOf('_')
+  //   const subStr = str.subString(index)
+
+  // }
 })
