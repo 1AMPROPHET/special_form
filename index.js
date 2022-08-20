@@ -189,10 +189,4 @@ layui.use(['layer', 'form'], function () {
     }
   }
 
-  // 拼接最后一个下划线后的字符串
-  // function lastUnderline(str) {
-  //   const index = str.lastIndexOf('_') === -1 ? 0 : str.lastIndexOf('_')
-  //   const subStr = str.subString(index)
-
-  // }
 })
